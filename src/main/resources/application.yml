@@ -32,4 +32,8 @@ mybatis-plus:
 logging:
   level:
     com.hust.card: info
+dir:
+  base: C:/data
+
+
 

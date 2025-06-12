@@ -1,7 +1,10 @@
 package com.hust.card.common.util;
 
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Base64;
 
 /**
@@ -89,6 +92,11 @@ public class Base64Util {
 			str = Base64.getEncoder().encodeToString(pArray);
 		}
 		return str;
+	}
+	// 将图片文件转为 Base64 编码的字符串
+	public static String convertToBase64(String imagePath) throws IOException {
+		byte[] imageBytes = Files.readAllBytes(Paths.get(imagePath));
+		return Base64.getEncoder().encodeToString(imageBytes);
 	}
 
 }
